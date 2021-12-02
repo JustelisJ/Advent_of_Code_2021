@@ -1,14 +1,13 @@
-package com.code.of.advent.solutions.day1;
+package com.code.of.advent.solutions.day_1;
+
+import lombok.AllArgsConstructor;
 
 import java.util.List;
 
+@AllArgsConstructor
 public class DepthCalculator {
 
     private List<Integer> depths;
-
-    public DepthCalculator(List<Integer> depths) {
-        this.depths = depths;
-    }
 
     public int increasingDepthCount() {
         int count = 0;
@@ -25,7 +24,7 @@ public class DepthCalculator {
     public int slidingDepthSumCounter() {
         int count = 0;
         int previousSum = Integer.MAX_VALUE;
-        for(int i = 0; i < depths.size() - 2; i++){
+        for (int i = 0; i < depths.size() - 2; i++) {
             int slidingSum = depths.get(i) + depths.get(i + 1) + depths.get(i + 2);
             if (previousSum < slidingSum) {
                 count++;

@@ -8,13 +8,29 @@ import java.util.Scanner;
 
 public class FileReader {
 
-    private static final String INPUT_BASE_PATH = "src/main/resources/inputs/day %d";
+    private FileReader() {
+
+    }
+
+    private static final String INPUT_BASE_PATH = "src/main/resources/inputs/day_%d";
 
     public static List<Integer> readInputFile(int day, String fileName) {
         List<Integer> input = new ArrayList<>();
         try (Scanner scanner = new Scanner(new File(String.format(INPUT_BASE_PATH, day), fileName))) {
             while (scanner.hasNext()) {
                 input.add(Integer.valueOf(scanner.next()));
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return input;
+    }
+
+    public static List<String> readInputFileToStringList(int day, String fileName) {
+        List<String> input = new ArrayList<>();
+        try (Scanner scanner = new Scanner(new File(String.format(INPUT_BASE_PATH, day), fileName))) {
+            while (scanner.hasNext()) {
+                input.add(scanner.nextLine());
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

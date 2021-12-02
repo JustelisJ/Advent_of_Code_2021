@@ -1,4 +1,4 @@
-package com.code.of.advent.solutions.day1;
+package com.code.of.advent.solutions.day_1;
 
 import com.code.of.advent.solutions.utils.FileReader;
 import org.junit.jupiter.api.BeforeEach;
