@@ -14,6 +14,10 @@ public class FileReader {
 
     private static final String INPUT_BASE_PATH = "src/main/resources/inputs/day_%d";
 
+    public static Scanner getScanner(int day, String fileName) throws FileNotFoundException {
+        return new Scanner(new File(String.format(INPUT_BASE_PATH, day), fileName));
+    }
+
     public static List<Integer> readInputFile(int day, String fileName) {
         List<Integer> input = new ArrayList<>();
         try (Scanner scanner = new Scanner(new File(String.format(INPUT_BASE_PATH, day), fileName))) {
