@@ -9,11 +9,11 @@ import java.util.List;
 @Slf4j
 public class LanternFish {
 
-    List<Byte> initialLanternFish;
+    List<Integer> initialLanternFish;
 
     public long fishCountAfterDays(int days) {
         long[] dayCount = new long[9];
-        for (Byte fish : initialLanternFish) {
+        for (Integer fish : initialLanternFish) {
             dayCount[fish]++;
         }
         for (int i = 0; i < days; i++) {

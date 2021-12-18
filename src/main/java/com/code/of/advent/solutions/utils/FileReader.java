@@ -30,12 +30,12 @@ public class FileReader {
         return input;
     }
 
-    public static List<Byte> readInputFileSeparateCommas(int day, String fileName) {
-        List<Byte> input = new ArrayList<>();
+    public static List<Integer> readInputFileSeparateCommas(int day, String fileName) {
+        List<Integer> input = new ArrayList<>();
         try (Scanner scanner = new Scanner(new File(String.format(INPUT_BASE_PATH, day), fileName))) {
             while (scanner.hasNext()) {
                 for(String number: scanner.next().split(",")){
-                    input.add(Byte.valueOf(number));
+                    input.add(Integer.valueOf(number));
                 }
             }
         } catch (FileNotFoundException e) {
