@@ -30,6 +30,20 @@ public class FileReader {
         return input;
     }
 
+    public static List<Byte> readInputFileSeparateCommas(int day, String fileName) {
+        List<Byte> input = new ArrayList<>();
+        try (Scanner scanner = new Scanner(new File(String.format(INPUT_BASE_PATH, day), fileName))) {
+            while (scanner.hasNext()) {
+                for(String number: scanner.next().split(",")){
+                    input.add(Byte.valueOf(number));
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return input;
+    }
+
     public static List<String> readInputFileToStringList(int day, String fileName) {
         List<String> input = new ArrayList<>();
         try (Scanner scanner = new Scanner(new File(String.format(INPUT_BASE_PATH, day), fileName))) {
